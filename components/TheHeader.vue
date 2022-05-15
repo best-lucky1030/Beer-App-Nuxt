@@ -29,3 +29,9 @@
 <script>
 export default {}
 </script>
+
+<style>
+.w-screen {
+  width: 100%;
+}
+</style>

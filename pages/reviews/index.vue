@@ -1,13 +1,13 @@
 <template>
   <div class="text-center font-bold text-xl">
-    <h1>reviews</h1>
+    <h1 class="title">reviews</h1>
     <AppSearchInput />
 
     <div class="grid md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3 m-5 mb-10">
       <div
         v-for="review in reviews"
         :key="review.id"
-        class="bg-white overflow-hidden hover:bg-green-100 m-1 border border-gray-200 p-3"
+        class="bg-white overflow-hidden hover:bg-green-100 m-1 border border-gray-200 p-3 review-card"
       >
         <NuxtLink :to="`/reviews/${review.slug}`">
           <img
@@ -43,3 +43,14 @@ export default {
   },
 }
 </script>
+<style scoped>
+.title {
+  text-transform: capitalize;
+  font-size: 40px;
+  margin: 20px 0;
+}
+.review-card {
+  border: 2px solid #b313f3;
+  border-radius: 10px;
+}
+</style>

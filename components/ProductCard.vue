@@ -9,7 +9,7 @@
       v-for="product in beers"
       v-else
       :key="product.id"
-      classs="flex flex-col"
+      class="flex flex-col each-card"
     >
       <div class="max-w-sm rounded overflow-hidden shadow-lg m-4">
         <NuxtLink :to="`/beer/${product.slug}`">
@@ -46,13 +46,13 @@
 
 <script>
 export default {
-  async fetch() {
-    this.beers = await this.$axios.$get('https://api.nuxtjs.dev/beers')
-  },
   data() {
     return {
       beers: {},
     }
+  },
+  async fetch() {
+    this.beers = await this.$axios.$get('https://api.nuxtjs.dev/beers')
   },
 }
 </script>
@@ -68,6 +68,10 @@ export default {
   border-radius: 50%;
   border-top-color: #158876;
   animation: spin 1s ease-in-out infinite;
+}
+.each-card {
+  display: flex;
+  margin: auto;
 }
 @keyframes spin {
   to {
