@@ -16,7 +16,7 @@
         clear filter
       </button>
     </div>
-    <div class="flex flex-wrap">
+    <div class="flex flex-wrap beer-cards">
       <ProductCardProps
         v-for="product in filteredBeers"
         :key="product.id"
@@ -51,3 +51,10 @@ export default {
   },
 }
 </script>
+<style scoped>
+.beer-cards {
+  margin-top: 50px;
+  text-align: center;
+  justify-content: center;
+}
+</style>
